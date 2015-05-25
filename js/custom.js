@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
                 });
             } else if (regexMd.test(url)) {
                 $.get(url, function(data) {
-                    $('.xwc-content').text(markdown.toHTML(data));
+                    $('.xwc-content').html(markdown.toHTML(data));
                 });
             } else if (regexPdf.test(url)) {
                 $('.xwc-content').html('<canvas id="the-canvas" style="border:1px solid black;"/>')
