@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
                 });
             } else if (regexPdf.test(url)) {
 
-                $('.xwc-content').html('<canvas id="the-canvas" style="border:1px solid black;"/>');
+                $('.xwc-content').html('<canvas id="the-canvas" style="width:100%; border:1px solid black;"/>');
                 $('.xwc-content').prepend('<div> <button id="prev">Previous</button> <button id="next">Next</button> &nbsp; &nbsp; <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span> </div>')
 
 
