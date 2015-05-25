@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
     }).sidebar('attach events', '.xwc-menu');
 
 
-    $.get("data/articles.json", function(data) {
+    $.getJSON("data/articles.json", function(data) {
         $.each(data.articles, function(i, item) {
             $('.ui.menu').append($('<a class="item"/>').attr('data-href', item.path).text(item.name));
         });
