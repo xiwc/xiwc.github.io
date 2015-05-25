@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 
             if (regexHtml.test(url)) {
                 $.get(url, function(data) {
-                    $('.xwc-content').text(data);
+                    $('.xwc-content').html(data);
                 });
             } else if (regexMd.test(url)) {
                 $.get(url, function(data) {
