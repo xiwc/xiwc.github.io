@@ -4,13 +4,10 @@ jQuery(document).ready(function($) {
 
     }).sidebar('attach events', '.xwc-menu');
 
-
     $('.ui.sidebar a.item').click(function(event) {
 
-        $('.xwc-content').load($(this.attr('data-href')),
-            function() {
-                
-            });
+    	$('.xwc-title').text($(this).text());
+        $('.xwc-content').load($(this).attr('data-href'));
 
     });
 
