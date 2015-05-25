@@ -4,10 +4,16 @@ jQuery(document).ready(function($) {
 
     }).sidebar('attach events', '.xwc-menu');
 
-    $('.ui.sidebar a.item').click(function(event) {
 
-    	$('.xwc-title').text($(this).text());
-        $('.xwc-content').load($(this).attr('data-href'));
+    $.getJSON("data/articles.json", function(data) {
+        $.each(data.articles, function(i, item) {
+            $('.ui.menu').append($('<a class="item"/>').attr('data-href', item.path).text(item.name));
+        });
+
+        $('.ui.menu a.item').click(function(event) {
+            $('.xwc-title').text($(this).text());
+            $('.xwc-content').load($(this).attr('data-href'));
+        });
 
     });
 
