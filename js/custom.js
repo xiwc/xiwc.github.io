@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
     }).sidebar('attach events', '.xwc-menu');
 
 
-    $.getJSON("data/articles.json", function(data) {
+    $.get("data/articles.json", function(data) {
         $.each(data.articles, function(i, item) {
             $('.ui.menu').append($('<a class="item"/>').attr('data-href', item.path).text(item.name));
         });
@@ -15,6 +15,6 @@ jQuery(document).ready(function($) {
             $('.xwc-content').load($(this).attr('data-href'));
         });
 
-    });
+    }, 'json');
 
 });
