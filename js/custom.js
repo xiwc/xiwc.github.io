@@ -14,6 +14,10 @@ jQuery(document).ready(function($) {
         });
 
         $('.ui.menu.sidebar a.item').click(function(event) {
+
+            $(this).parent().find('a.item').removeClass('active');
+            $(this).addClass('active');
+
             $('.xwc-title').text($(this).text());
             var url = $(this).attr('data-href');
 
