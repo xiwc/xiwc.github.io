@@ -20,14 +20,7 @@
 </head>
 
 <body tabindex="1" class="loadingInProgress">
-    <div class="ui inverted left vertical sidebar menu">
-    </div>
-    <div class="ui inverted top fixed menu">
-        <a class="item xwc-menu">
-            <i class="content icon"></i> 菜单
-        </a>
-        <a class="item" href="../../../index.html">主页</a>
-    </div>
+    <div class="ui inverted left vertical sidebar menu"></div>
     <div class="pusher" id="outerContainer">
         <div id="sidebarContainer">
             <div id="toolbarSidebar">
@@ -123,6 +116,9 @@
                                 <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
                             </button>
                             <div class="toolbarButtonSpacer"></div>
+                            <button id="sidebarMenuToggle" class="toolbarButton" title="Toggle Sidebar Menu">
+                            <i class="content icon"></i>
+                            </button>
                             <button id="viewFind" class="toolbarButton group hiddenSmallView" title="Find in Document" tabindex="12" data-l10n-id="findbar">
                                 <span data-l10n-id="findbar_label">Find</span>
                             </button>
