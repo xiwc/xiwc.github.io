@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
             });
 
             function pdfPageView(url) {
-                $('.xwc-content').html('<div id="pageContainer" class="pdfPage"></div>);
+                $('.xwc-content').html('<div id="pageContainer" class="pdfPage"></div>');
                     var PAGE_TO_VIEW = 1;
                     var SCALE = 1.0;
 
