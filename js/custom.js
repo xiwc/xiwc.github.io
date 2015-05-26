@@ -4,8 +4,8 @@ jQuery(document).ready(function($) {
 
     }).sidebar('attach events', '.xwc-menu');
 
-    var regexHtml = /.*\.html/gi;
-    var regexMd = /.*\.md/gi;
+    var regexHtml = /.*\.html/i;
+    var regexMd = /.*\.md/i;
 
     $.getJSON("data/articles.json", function(data) {
         $.each(data.articles, function(i, item) {
