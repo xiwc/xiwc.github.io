@@ -20,6 +20,8 @@ jQuery(document).ready(function($) {
             $('.xwc-title').text($(this).text());
             var url = $(this).attr('data-href');
 
+            $('.xwc-content').empty();
+
             if (regexHtml.test(url)) {
                 $.get(url, function(data) {
                     $('.xwc-content').html(data);
