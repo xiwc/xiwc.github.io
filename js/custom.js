@@ -4,7 +4,10 @@ jQuery(document).ready(function($) {
 
     }).sidebar('attach events', '.xwc-menu');
 
-    $('.popup').popup();
+    $('.popup').popup({
+        setFluidWidth: false,
+        inline: true
+    });
 
     var regexHtml = /.*\.html/i;
     var regexMd = /.*\.md/i;
