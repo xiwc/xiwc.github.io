@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
                 });
             } else if (regexMd.test(url)) {
                 $.get(url, function(data) {
-                    $('.xwc-content').html(markdown.toHTML(data));
+                    $('<div class="markdown-body"/>').html(markdown.toHTML(data)).appendTo('.xwc-content');
                 });
             }
         });
