@@ -9,7 +9,14 @@ jQuery(document).ready(function($) {
 
     $.getJSON("data/articles.json", function(data) {
         $.each(data.articles, function(i, item) {
-            $('.ui.menu.sidebar').append($('<a class="item"/>').attr('data-href', item.path).text(item.name));
+            if (!item.hasOwnProperty("hidden") || !item.hidden) {
+                $('.ui.menu.sidebar').append($('<a class="item"/>').attr({
+                    "data-href": item.path,
+                    "data-category": item.category,
+                    "data-date": item.date,
+                    "data-time": item.time
+                }).text(item.name));
+            }
         });
 
         $('.ui.menu.sidebar a.item').click(function(event) {
@@ -18,6 +25,8 @@ jQuery(document).ready(function($) {
             $(this).addClass('active');
 
             $('.xwc-title').text($(this).text());
+            $('.xwc-datetime').text($(this).attr('data-date') + " " + $(this).attr('data-time'));
+            $('.xwc-category').text($(this).attr('data-category'));
             var url = $(this).attr('data-href');
 
             $('.xwc-content').empty();

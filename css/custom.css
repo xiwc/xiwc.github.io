@@ -1,3 +1,10 @@
-.xwc-body{
-	
+.xwc-body {}
+
+.xwc-sub-header {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.xwc-sub-header .xwc-datetime {
+    margin-right: 10px;
 }
