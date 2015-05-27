@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
 
     $('.popup').popup({
         setFluidWidth: false,
+        position: 'bottom right',
         inline: true
     });
 
