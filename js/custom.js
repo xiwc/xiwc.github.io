@@ -4,6 +4,8 @@ jQuery(document).ready(function($) {
 
     }).sidebar('attach events', '.xwc-menu');
 
+    $('.popup').popup();
+
     var regexHtml = /.*\.html/i;
     var regexMd = /.*\.md/i;
 
