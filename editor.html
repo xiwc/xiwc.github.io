@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>Markdown Editor</title>
+    <link rel="stylesheet" type="text/css" href="lib/semantic/semantic.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <script type="text/javascript" src="lib/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="lib/semantic/semantic.js"></script>
+    <script type="text/javascript" src="lib/epiceditor/js/epiceditor.js"></script>
+</head>
+
+<body>
+    <div class="ui inverted top fixed menu">
+        <a class="item" target="_blank" href="index.html">Home</a>
+        <div class="right menu">
+            <a class="popup icon github item" data-variation="inverted" data-content="在GitHub上查看项目" href="https://github.com/xiwc/xiwc.github.io">
+                <i class="alternate github icon"></i>
+            </a>
+        </div>
+    </div>
+    <div class="pusher">
+        <div class="ui basic segment"></div>
+        <div class="ui basic segment editor">
+            <div id="epiceditor"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+
+        $('.popup').popup({
+            setFluidWidth: false,
+            position: 'bottom right',
+            inline: true
+        });
+
+        $('#epiceditor').height($(window).height() - 80);
+
+        var editor = new EpicEditor({
+            basePath: 'lib/epiceditor'
+        }).load();
+
+        $(window).resize(function(event) {
+            $('#epiceditor').width($('.ui.segment.editor').width());
+            $('#epiceditor').height($(window).height() - 80);
+        });
+    });
+    </script>
+</body>
+
+</html>
