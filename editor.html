@@ -16,7 +16,9 @@
 
 <body>
     <div class="ui inverted top fixed menu">
-        <a class="item" target="_blank" href="index.html">Home</a>
+        <a class="popup icon home item" data-variation="inverted" data-content="返回主页" href="index.html">
+            <i class="home icon"></i>
+        </a>
         <div class="right menu">
             <a class="popup icon github item" data-variation="inverted" data-content="在GitHub上查看项目" href="https://github.com/xiwc/xiwc.github.io">
                 <i class="alternate github icon"></i>
@@ -32,9 +34,15 @@
     <script type="text/javascript">
     jQuery(document).ready(function($) {
 
-        $('.popup').popup({
+        $('.popup.github').popup({
             setFluidWidth: false,
             position: 'bottom right',
+            inline: true
+        });
+
+        $('.popup.home').popup({
+            setFluidWidth: false,
+            position: 'bottom left',
             inline: true
         });
 
