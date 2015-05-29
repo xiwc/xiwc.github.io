@@ -131,23 +131,23 @@
     padding: 0;
 } */
 
-#markdown-body hr {
+.markdown-body hr {
     overflow: hidden;
     background: 0 0
 }
 
-#markdown-body hr:before {
+.markdown-body hr:before {
     display: table;
     content: ""
 }
 
-#markdown-body hr:after {
+.markdown-body hr:after {
     display: table;
     clear: both;
     content: ""
 }
 
-#markdown-body hr {
+.markdown-body hr {
     height: 4px;
     padding: 0;
     margin: 16px 0;
@@ -155,7 +155,7 @@
     border: 0
 }
 
-#markdown-body hr {
+.markdown-body hr {
     -moz-box-sizing: content-box;
     box-sizing: content-box
 }
