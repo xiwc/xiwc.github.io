@@ -42,16 +42,21 @@ jQuery(document).ready(function($) {
             if (regexHtml.test(url)) {
                 $.get(url, function(data) {
                     $('.xwc-content').html(data);
+                    // highlight code block
+                    $('pre code').each(function(i, block) {
+                        hljs.highlightBlock(block);
+                    });
                 });
             } else if (regexMd.test(url)) {
                 $.get(url, function(data) {
                     $('<div class="markdown-body"/>').html(converter.makeHtml(data)).appendTo('.xwc-content');
+                    // highlight code block
+                    $('pre code').each(function(i, block) {
+                        hljs.highlightBlock(block);
+                    });
                 });
             }
 
-            $('pre code').each(function(i, block) {
-                hljs.highlightBlock(block);
-            });
         });
 
     });
