@@ -46,6 +46,10 @@ jQuery(document).ready(function($) {
                     $('<div class="markdown-body"/>').html(markdown.toHTML(data)).appendTo('.xwc-content');
                 });
             }
+
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
         });
 
     });
