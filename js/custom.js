@@ -13,6 +13,8 @@ jQuery(document).ready(function($) {
     var regexHtml = /.*\.html/i;
     var regexMd = /.*\.md/i;
 
+    var converter = new showdown.Converter();
+
     $.getJSON("data/articles.json", function(data) {
         $.each(data.articles, function(i, item) {
             if (!item.hasOwnProperty("hidden") || !item.hidden) {
@@ -43,7 +45,7 @@ jQuery(document).ready(function($) {
                 });
             } else if (regexMd.test(url)) {
                 $.get(url, function(data) {
-                    $('<div class="markdown-body"/>').html(markdown.toHTML(data)).appendTo('.xwc-content');
+                    $('<div class="markdown-body"/>').html(converter.makeHtml(data)).appendTo('.xwc-content');
                 });
             }
 
