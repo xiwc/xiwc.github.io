@@ -36,5 +36,11 @@
         "date": "2015/05/29",
         "time": "07:20:00",
         "path": "page/markdown.test.md"
+    }, {
+        "name": "Markdown Highlight Code",
+        "category": "web",
+        "date": "2015/05/30",
+        "time": "07:20:00",
+        "path": "page/highlight.code.test.md"
     }]
 }
