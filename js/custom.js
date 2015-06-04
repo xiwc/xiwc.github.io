@@ -10,14 +10,11 @@ jQuery(document).ready(function($) {
         inline: true
     });
 
-    var searchContent = [];
-
     $('.ui.search').search({
-        source: searchContent,
         onSelect: function(result, response) {
 
             $('.ui.menu.sidebar a.item').each(function(index, el) {
-                if($(el).attr('data-href') == result.href){
+                if ($(el).attr('data-href') == result.href) {
                     $(el).triggerHandler('click');
                     return false;
                 }
@@ -31,6 +28,8 @@ jQuery(document).ready(function($) {
     var converter = new showdown.Converter();
 
     $.getJSON("data/articles.json", function(data) {
+        var searchContent = [];
+
         $.each(data.articles, function(i, item) {
             if (!item.hasOwnProperty("hidden") || !item.hidden) {
                 $('.ui.menu.sidebar').append($('<a class="item"/>').attr({
@@ -48,6 +47,10 @@ jQuery(document).ready(function($) {
                     time: item.time
                 });
             }
+        });
+
+        $('.ui.search').search({
+            source: searchContent
         });
 
         $('.ui.menu.sidebar a.item').click(function(event) {
