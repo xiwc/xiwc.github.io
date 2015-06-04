@@ -10,6 +10,21 @@ jQuery(document).ready(function($) {
         inline: true
     });
 
+    var searchContent = [];
+
+    $('.ui.search').search({
+        source: searchContent,
+        onSelect: function(result, response) {
+
+            $('.ui.menu.sidebar a.item').each(function(index, el) {
+                if($(el).attr('data-href') == result.href){
+                    $(el).triggerHandler('click');
+                    return false;
+                }
+            });
+        }
+    });
+
     var regexHtml = /.*\.html/i;
     var regexMd = /.*\.md/i;
 
@@ -24,6 +39,14 @@ jQuery(document).ready(function($) {
                     "data-date": item.date,
                     "data-time": item.time
                 }).text(item.name));
+
+                searchContent.push({
+                    title: item.name,
+                    category: item.category,
+                    href: item.path,
+                    date: item.date,
+                    time: item.time
+                });
             }
         });
 
