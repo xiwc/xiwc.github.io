@@ -10,18 +10,6 @@ jQuery(document).ready(function($) {
         inline: true
     });
 
-    $('.ui.search').search({
-        onSelect: function(result, response) {
-
-            $('.ui.menu.sidebar a.item').each(function(index, el) {
-                if ($(el).attr('data-href') == result.href) {
-                    $(el).triggerHandler('click');
-                    return false;
-                }
-            });
-        }
-    });
-
     var regexHtml = /.*\.html/i;
     var regexMd = /.*\.md/i;
 
@@ -50,7 +38,15 @@ jQuery(document).ready(function($) {
         });
 
         $('.ui.search').search({
-            source: searchContent
+            source: searchContent,
+            onSelect: function(result, response) {
+                $('.ui.menu.sidebar a.item').each(function(index, el) {
+                    if ($(el).attr('data-href') == result.href) {
+                        $(el).triggerHandler('click');
+                        return false;
+                    }
+                });
+            }
         });
 
         $('.ui.menu.sidebar a.item').click(function(event) {
