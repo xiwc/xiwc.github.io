@@ -1,6 +1,9 @@
-# spring-boot-starter-mail使用总结
+# spring-boot-starter-mail使用总结  
+
 > 通过spring boot来使用mail可以实现该框架自动配置注入`MailSender`单例模式组件(component).
+
 ---
+
 ### `pom.xml`中引入dependency
 ```
   <dependency>
@@ -8,7 +11,9 @@
    <artifactId>spring-boot-starter-mail</artifactId>
   </dependency>
 ```
+
 ### `application.properties`中加入创建`MailSender`实例需要的配置参数
+
 ```
 # spring mail
 spring.mail.host=smtp.163.com
@@ -17,7 +22,9 @@ spring.mail.username=test@163.com
 spring.mail.password=******
 spring.mail.default-encoding=UTF-8
 ```
+
 ### 简单针对`MailSender`的发送邮件测试
+
 ```java
 package com.test.component;
 
@@ -57,7 +64,9 @@ public class MailSenderTest extends AbstractTestNGSpringContextTests {
 
 }
 ```
+
 ### 自定义封装邮件发送类
+
 ```
 
 package com.test.component;
@@ -146,7 +155,9 @@ public class MailSender2 {
  }
 }
 ```
+
 ### 自定义封装邮件发送类测试
+
 ```java
 package com.test.component;
 
@@ -202,7 +213,9 @@ public class MailSender2Test extends AbstractTestNGSpringContextTests {
  }
 }
 ```
+
 ### 使用到的MapUtil
+
 ```java
 package com.test.util;
 
@@ -300,7 +313,9 @@ public final class MapUtil {
 
 }
 ```
+
 ### 使用到的TemplateUtil
+
 ```java
 package com.test.util;
 
@@ -353,10 +368,15 @@ public class TemplateUtil {
 
 }
 ```
+
 ### 模板技术使用的是thymeleaf
+
 > 该模板技术是基于java的,最大的牛叉之处就是,可以在绑定数据到视图页面的后,不破坏静态页面的显示效果.极大的方便页面设计.
+
 ---
+
 ### `pom.xml`引入dependency
+
 ```
   <dependency>
    <groupId>org.springframework.boot</groupId>
@@ -365,5 +385,6 @@ public class TemplateUtil {
 ```
 
 ### 结语
-> spring boot starter中提供大量的自动化配置模块,只要引入对应的`dependency`,然后配置对应配置参数到`application.properites`就可以使用自动化配置的对象实例.
+
+> spring boot starter中提供大量的自动化配置模块,只要引入对应的`dependency`,然后配置对应配置参数到`application.properites`就可以使用自动化配置的对象实例.  
 > 体现的原则:`规约犹豫配置`
