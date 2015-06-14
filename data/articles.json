@@ -1,5 +1,11 @@
 {
     "articles": [{
+        "name": "Spring-boot Mail使用",
+        "category": "Spring",
+        "date": "2015/06/14",
+        "time": "16:00:00",
+        "path": "page/spring-boot-starter-mail.md"
+    }, {
         "name": "Win8.1磁盘IO 100%",
         "category": "OS",
         "date": "2015/06/01",
