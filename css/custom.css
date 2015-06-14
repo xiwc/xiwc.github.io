@@ -1,4 +1,7 @@
-.xwc-body {}
+.xwc-body {
+    max-width: 800px;
+    margin: auto;
+}
 
 .xwc-sub-header {
     font-size: 1rem;
