@@ -20,8 +20,8 @@
             <i class="home icon"></i>
         </a>
         <div class="right menu">
-            <a class="item" data-variation="inverted" data-content="CKEditor" target="_blank" href="ckeditor.html">CKEditor</a>
-            <a class="item" data-variation="inverted" data-content="Editor.md" target="_blank" href="editor-md.html">Editor.md</a>
+            <a class="popup ckeditor item" data-variation="inverted" data-content="CKEditor" target="_blank" href="ckeditor.html">CKEditor</a>
+            <a class="popup editor-md item" data-variation="inverted" data-content="Editor.md" target="_blank" href="editor-md.html">Editor.md</a>
             <a class="popup icon github item" data-variation="inverted" data-content="在GitHub上查看项目" target="_blank" href="https://github.com/xiwc/xiwc.github.io">
                 <i class="alternate github icon"></i>
             </a>
@@ -42,7 +42,7 @@
             inline: true
         });
 
-        $('.popup.home').popup({
+        $('.popup.home, .popup.ckeditor, .popup.editor-md').popup({
             setFluidWidth: false,
             position: 'bottom left',
             inline: true
