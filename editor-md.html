@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <title>Markdown Editor</title>
+    <title>Editor.md Editor</title>
     <link rel="stylesheet" type="text/css" href="lib/semantic/semantic.css">
+    <link rel="stylesheet" href="lib/editor.md/css/editormd.min.css" />
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <script type="text/javascript" src="lib/jquery-1.11.2.js"></script>
     <script type="text/javascript" src="lib/semantic/semantic.js"></script>
-    <script type="text/javascript" src="lib/epiceditor/js/epiceditor.js"></script>
+    <script type="text/javascript" src="lib/editor.md/editormd.min.js"></script>
 </head>
 
 <body>
@@ -20,8 +21,6 @@
             <i class="home icon"></i>
         </a>
         <div class="right menu">
-            <a class="popup ckeditor item" data-variation="inverted" data-content="CKEditor" target="_blank" href="ckeditor.html">CKEditor</a>
-            <a class="popup editor-md item" data-variation="inverted" data-content="Editor.md" target="_blank" href="editor-md.html">Editor.md</a>
             <a class="popup icon github item" data-variation="inverted" data-content="在GitHub上查看项目" target="_blank" href="https://github.com/xiwc/xiwc.github.io">
                 <i class="alternate github icon"></i>
             </a>
@@ -29,8 +28,10 @@
     </div>
     <div class="pusher">
         <div class="ui basic segment"></div>
-        <div class="ui basic segment editor">
-            <div id="epiceditor"></div>
+        <div class="ui basic segment editor" style="height: 700px;">
+            <div id="editormd">
+                <textarea style="display:none;">### Hello Editor.md !</textarea>
+            </div>
         </div>
     </div>
     <script type="text/javascript">
@@ -42,21 +43,15 @@
             inline: true
         });
 
-        $('.popup.home, .popup.ckeditor, .popup.editor-md').popup({
+        $('.popup.home').popup({
             setFluidWidth: false,
             position: 'bottom left',
             inline: true
         });
 
-        $('#epiceditor').height($(window).height() - 80);
-
-        var editor = new EpicEditor({
-            basePath: 'lib/epiceditor'
-        }).load();
-
-        $(window).resize(function(event) {
-            $('#epiceditor').width($('.ui.segment.editor').width());
-            $('#epiceditor').height($(window).height() - 80);
+        var editor = editormd("editormd", {
+            emoji : true,
+            path : "lib/editor.md/lib/"
         });
     });
     </script>
